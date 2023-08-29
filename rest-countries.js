@@ -11,18 +11,33 @@ fetch("https://restcountries.com/v3.1/all")
       const searchedArray = [];
       for (let i = 0; i < data.length; i++) {
         const element = data[i];
+        console.log(element.continents.toString())
         if(element.name.common.toLowerCase().includes(elInput.value.toLowerCase())  ){
           searchedArray.push(element);
         }
       }
       renderCountries(searchedArray, elCards);
     });
+
+
+    elCategory.addEventListener("change", (evt) => {
+      const newArray = [];
+      data.forEach((element) => {
+        if(element.continents.toString() === elCategory.value){
+          newArray.push(element);
+          renderCountries(data, elCards);
+        }
+      });
+      renderCountries(newArray, elCards);
+    });
+
 });
 
 const elCards = findElement(".cards");;
 const elTemplate = findElement("#template").content;
 const elInput = findElement("#input");
 const btnSearch = findElement("#search");
+const elCategory = findElement("#category");
 
 function renderCountries(array, parent) {
   parent.innerHTML = null;
