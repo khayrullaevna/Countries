@@ -22,6 +22,13 @@ fetch("https://restcountries.com/v3.1/all")
 
     elCategory.addEventListener("change", (evt) => {
       const newArray = [];
+      if(elCategory.value == "all"){
+        fetch("https://restcountries.com/v3.1/all")
+        .then((response) => response.json())
+        .then((data) => {
+          renderCountries(data, elCards);
+        });
+      }
       data.forEach((element) => {
         if(element.continents.toString() === elCategory.value){
           newArray.push(element);
