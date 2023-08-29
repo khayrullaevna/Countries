@@ -13,8 +13,8 @@
     <div class="container">
 
         <div class="d-flex gap-5">
-            <select class="btn btn-danger w-50 mt-5 mb-5" name="katalog" id="category">
-              <option >all countries</option>
+            <select class="btn btn-success w-50 mt-5 mb-5 fw-bold fs-4" name="katalog" id="category">
+              <option value="">All Countries</option>
               <option value="Asia">Asia</option>
               <option value="Africa">Africa</option>
               <option value="North America">North America</option>
@@ -27,7 +27,7 @@
       
               <div class="input-group w-25 mt-5 mb-5">
                   <input type="search" id="input" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                  <button type="button" id="search" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
+                  <button type="button" id="search" class="btn btn-dark"><i class="fa-solid fa-magnifying-glass"></i></button>
               </div>
           </div>
           
@@ -35,10 +35,10 @@
       
           <template id="template">
               <div class="col-3">
-                  <div class="card">
-                      <img class="card-img-top" src="" alt="" />
+                  <div class="card mb-5">
+                      <img class="card-img-top" style="height: 170px;" src="" alt="" />
                       <div class="card-body">
-                          <h5 class="card-title" data-id="countries"></h5>
+                          <h5 class="card-title text-center fw-bold" data-id="countries"></h5>
                           <p class="card-text card-rate">   </p><span class="card-count"></span> 
                           <p class="card-text card-price"></p>
                       </div>
